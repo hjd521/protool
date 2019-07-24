@@ -1,5 +1,10 @@
-import {debounce, deepCopy} from './prototype/index'
+import * as prototypes from './prototype/index'
+function setPrototype(main, obj) {
+  Object.keys(obj).forEach((item) => {
+    let key = '$' + item
+    main.prototype.key = obj[item]
+  })
+}
 export default function install(Vue) {
-  Vue.prototype.$deepCopy = deepCopy
-  Vue.prototype.$debounce = debounce
+  setPrototype(Vue, prototypes)
 }
