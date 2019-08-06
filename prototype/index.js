@@ -52,7 +52,7 @@ function deepCopy(param) {
 // 谓词函数否
 function completeNo (func) {
   return function (...arg) {
-    return !function(arg)
+    return !func(arg)
   }
 }
 // 谓词函数或
@@ -90,4 +90,35 @@ function curry(fn, length) {
   } 
   _cur([])
 }
-export {debounce, deepCopy, throttle, competeAnd, competeOr, completeNo, curry}
+// 控制input的内容为整型数字
+function setInter(value) {
+  value = String(value)
+  const po = value.indexOf('.')
+  const mid = po === -1 ? value : value.substring(0, po + 1)
+  const re = mid.replace(/[^\d]/g, '')
+  if (re === '') {
+    return 0
+  } else {
+    return parseInt(re)
+  }
+}
+// 设置小数
+function setPart(value) {
+  let re =  String(value).replace(/[^\d.]/g, '')
+  re = re.replace(/^\./g, '')
+  re = re.replace(/\.{2,}/g, '.')
+  re = re.replace(".", "$#$").replace(/\./g, "").replace("$#$", ".").replace(/^(\-)*(\d+)\.(\d\d).*$/, '$1$2.$3')
+  let index = re.indexOf('.')
+  if (index < 0 && re !== '') {
+    re = parseFloat(re)
+  }
+  if (index > 1) {
+    let pre = re.substring(0, index)
+    let end = re.substring(index)
+    pre = pre.length > 1 ? pre.replace(/^0{1,}/, '') : pre
+    pre = pre === '' ? '0' : pre
+    re = pre + end
+  }
+  return re
+}
+export {debounce, deepCopy, throttle, competeAnd, competeOr, completeNo, curry, setInter, setPart}

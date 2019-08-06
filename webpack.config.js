@@ -1,4 +1,5 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     entry: './index.js',
     output: {
@@ -6,6 +7,7 @@ module.exports = {
         filename: 'tool.min.js' ,
         libraryTarget: 'umd'
     },
+    devtool: 'inline-source-map',
     module: {
         rules: [
             {
@@ -17,5 +19,10 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'tool'
+        })
+    ]
 }
