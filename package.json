@@ -1,8 +1,8 @@
 {
   "name": "vue-work-p",
-  "version": "1.1.1",
+  "version": "1.1.3",
   "description": "for work normal use",
-  "main": "dit/index.js",
+  "main": "dist/tool.js",
   "jsnext:main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
