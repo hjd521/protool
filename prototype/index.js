@@ -102,7 +102,7 @@ function setInter(value) {
     return parseInt(re)
   }
 }
-// 设置小数
+// 设置两位小数
 function setPart(value) {
   let re =  String(value).replace(/[^\d.]/g, '')
   re = re.replace(/^\./g, '')

@@ -7,7 +7,6 @@ module.exports = {
         filename: 'tool.min.js' ,
         libraryTarget: 'umd'
     },
-    devtool: 'inline-source-map',
     module: {
         rules: [
             {

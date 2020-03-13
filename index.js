@@ -1,3 +1,4 @@
+
 import * as prototypes from './prototype/index'
 function setPrototype(main, obj) {
   Object.keys(obj).forEach((item) => {
