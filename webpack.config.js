@@ -21,7 +21,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'tool'
-        })
+            title: 'tool',
+            template: path.resolve(__dirname, '../index.html')
+          })
     ]
 }

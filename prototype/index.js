@@ -96,7 +96,7 @@ function setInter(value) {
   const po = value.indexOf('.')
   const mid = po === -1 ? value : value.substring(0, po + 1)
   const re = mid.replace(/[^\d]/g, '')
-  if (re === '') {
+  if (re === '' || re[0] === '0') {
     return 0
   } else {
     return parseInt(re)

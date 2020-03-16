@@ -8,12 +8,6 @@ const webpackConfig = merge(base,{
     contentBase: path.join(__dirname, "dist"),
     compress: true,
     port: 9000
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'tool',
-      template: path.resolve(__dirname, '../index.html')
-    })
-  ]
+  }
 })
 module.exports = webpackConfig
