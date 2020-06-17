@@ -1,4 +1,5 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 let webpackConfig = {
@@ -28,6 +29,10 @@ let webpackConfig = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'demo',
+      template:  './index.html'
+  }),
     new VueLoaderPlugin()
   ]
 }

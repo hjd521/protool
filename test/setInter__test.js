@@ -6,9 +6,6 @@ describe('测试setInter', () => {
   test('part', ()=> {
     expect(setInter('1.22')).toBe(1)
   });
-  test('part', ()=> {
-    expect(setInter('1.22')).toBe(1)
-  });
   test('number', () =>  {
     expect(setInter('01.22')).toBe(0)
   })
